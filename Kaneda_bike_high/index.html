@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ARサンプルWebページ</title>
+
+  <!-- model-viewer用のheadタグ -->
+  <!-- Loads <model-viewer> for modern browsers: -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <!-- Loads <model-viewer> for old browsers like IE11: -->
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  
+  <style>
+  .wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  img {
+    max-width: 100%;
+  }
+  .ar-model {
+    margin: 0 auto;
+    max-width: 600px;
+    height: 400px;
+  }
+  summary {
+    color:#00F
+  }
+  </style>
+</head>
+  
+<body>
+<div class="wrapper">
+  <h2 style="text-align:center">おっしぃ の AR</h2>
+  右下の立方体のアイコンからARで体験できるよ 
+  ARで配置したら移動させたり拡大したりできるよ
+  
+ 
+  <p><h3 style="text-align:center">アルマイト処理</h3>
+   <model-viewer class="ar-model" preload poster="almite.png" src="splush_almite.glb" quick-look-browsers="safari chrome" ios-src="splush_almite.usdz" auto-rotate camera-controls ar alt="サンプル"></model-viewer>
+  </p> 
+  
+  <details>
+    <summary>詳細</summary>
+    <h3>特徴</h3>
+    対応端末ではモデルの右下に立方体のAR表示アイコンが出る。
+    AR未対応端末でもサイト上に3Dモデル表示はできる。
+    外部スクリプトを読み込む必要があるので少しロードする。
+    <h3>対応デバイス</h3>
+    iOS12以降搭載のiPhoneまたはiPad<br>
+    ARCore対応Android端末<a href="https://developers.google.com/ar/discover/supported-devices#ios" target="_blank">ARCore supported devices</a><br>
+    3D表示のみならPCでも可能
+    <h3>対応ブラウザ</h3>
+    Safari,Chrome,IE,Firefox,Twitterブラウザなどなど。LINEブラウザ(iPhone)は現状無理っぽい。
+  </details>
+  
+</div>
+</body>
+</html>
